@@ -94,6 +94,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Bem-Vindo" id="ekG-DP-ZDf"/>
                     <connections>
+                        <outlet property="buttonSignup" destination="vHg-Pc-VmE" id="8WZ-rj-L7F"/>
                         <outlet property="labelCopyright" destination="ooM-VN-Zct" id="ekz-Wy-nbz"/>
                         <outlet property="textFieldEmail" destination="Kte-PA-46j" id="CFk-pZ-Znm"/>
                         <outlet property="textFieldName" destination="4m9-un-vWC" id="qZV-7Z-Dbn"/>

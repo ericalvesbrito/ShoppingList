@@ -14,7 +14,8 @@ class RemoteConfigValues {
     static let shared = RemoteConfigValues()
     private let rc = RemoteConfig.remoteConfig()
     private let defaultValues: [String: Any] = [
-        "copyrightMessage": "FIAP 20MOB 2020: Todos direitos reservados"
+        "copyrightMessage": "FIAP 20MOB 2020: Todos direitos reservados",
+        "signupEnabled": true
     ]
     
     private init() {
@@ -52,6 +53,10 @@ class RemoteConfigValues {
     
     var copyrightMessage: String {
         rc.configValue(forKey: "copyrightMessage").stringValue ?? "FIAP 20MOB 2020: Todos direitos reservados"
+    }
+    
+    var signupEnabled: Bool {
+        rc.configValue(forKey: "signupEnabled").boolValue
     }
     
 }

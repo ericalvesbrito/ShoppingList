@@ -16,6 +16,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var labelCopyright: UILabel!
+    @IBOutlet weak var buttonSignup: UIButton!
     
     // MARK: - Properties
     
@@ -27,6 +28,7 @@ final class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         labelCopyright.text = RemoteConfigValues.shared.copyrightMessage
+        buttonSignup.isHidden = !RemoteConfigValues.shared.signupEnabled
     }
     
     // MARK: - IBActions
