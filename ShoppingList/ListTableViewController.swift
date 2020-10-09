@@ -76,7 +76,7 @@ final class ListTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    private func showAlertForItem(_ item: ShoppingItem?) {
+    private func showAlertForItem(_ item: ShoppingItem? = nil) {
         let alert = UIAlertController(title: "Produto", message: "Entre com as informações do produto abaixo", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
@@ -113,6 +113,7 @@ final class ListTableViewController: UITableViewController {
 
         present(alert, animated: true, completion: nil)
     }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -132,11 +133,20 @@ final class ListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let shoppingItem = shoppingList[indexPath.row]
+        showAlertForItem(shoppingItem)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let shoppingItem = shoppingList[indexPath.row]
+            firestore.collection(collection).document(shoppingItem.id).delete()
+        }
     }
     
     // MARK: - IBActions
     @IBAction func addItem(_ sender: Any) {
+        showAlertForItem()
     }
 
 }

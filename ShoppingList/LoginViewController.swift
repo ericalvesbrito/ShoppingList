@@ -24,6 +24,11 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        labelCopyright.text = RemoteConfigValues.shared.copyrightMessage
+    }
+    
     // MARK: - IBActions
     @IBAction func signIn(_ sender: Any) {
         Auth.auth().signIn(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) { (result, error) in

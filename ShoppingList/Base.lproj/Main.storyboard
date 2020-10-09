@@ -71,13 +71,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooM-VN-Zct">
+                                <rect key="frame" x="20" y="831.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Mte-P4-8ms" firstAttribute="leading" secondItem="NDM-YA-3vv" secondAttribute="leading" constant="20" id="3aV-Mv-kGu"/>
                             <constraint firstItem="ZYM-sV-cZS" firstAttribute="top" secondItem="NDM-YA-3vv" secondAttribute="top" constant="10" id="Evx-2p-ZnR"/>
+                            <constraint firstItem="NDM-YA-3vv" firstAttribute="trailing" secondItem="ooM-VN-Zct" secondAttribute="trailing" constant="20" id="H7s-Cq-6LP"/>
                             <constraint firstItem="NDM-YA-3vv" firstAttribute="bottom" secondItem="Mte-P4-8ms" secondAttribute="bottom" constant="20" id="Lns-G3-Mid"/>
+                            <constraint firstItem="ooM-VN-Zct" firstAttribute="leading" secondItem="NDM-YA-3vv" secondAttribute="leading" constant="20" id="PLQ-6R-Gu0"/>
                             <constraint firstItem="NDM-YA-3vv" firstAttribute="trailing" secondItem="ZYM-sV-cZS" secondAttribute="trailing" constant="40" id="Ris-ZF-2WJ"/>
+                            <constraint firstItem="NDM-YA-3vv" firstAttribute="bottom" secondItem="ooM-VN-Zct" secondAttribute="bottom" constant="10" id="koz-5E-p73"/>
                             <constraint firstItem="NDM-YA-3vv" firstAttribute="trailing" secondItem="Mte-P4-8ms" secondAttribute="trailing" constant="20" id="psS-OZ-vqc"/>
                             <constraint firstItem="ZYM-sV-cZS" firstAttribute="leading" secondItem="NDM-YA-3vv" secondAttribute="leading" constant="40" id="zky-v3-1du"/>
                         </constraints>
@@ -85,7 +94,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Bem-Vindo" id="ekG-DP-ZDf"/>
                     <connections>
-                        <outlet property="labelCopyright" destination="Mte-P4-8ms" id="RU9-Fj-6GT"/>
+                        <outlet property="labelCopyright" destination="ooM-VN-Zct" id="ekz-Wy-nbz"/>
                         <outlet property="textFieldEmail" destination="Kte-PA-46j" id="CFk-pZ-Znm"/>
                         <outlet property="textFieldName" destination="4m9-un-vWC" id="qZV-7Z-Dbn"/>
                         <outlet property="textFieldPassword" destination="M1l-6N-vTp" id="uYq-Ge-kX5"/>
