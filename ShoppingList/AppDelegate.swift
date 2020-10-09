@@ -18,6 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        if Auth.auth().currentUser != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let listTableViewController = storyboard.instantiateViewController(withIdentifier: String(describing: ListTableViewController.self))
+            let nc = window?.rootViewController as? UINavigationController
+            nc?.viewControllers = [listTableViewController]
+        }
+        
         return true
     }
 }

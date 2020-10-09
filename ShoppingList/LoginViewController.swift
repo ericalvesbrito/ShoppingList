@@ -26,6 +26,10 @@ final class LoginViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func signIn(_ sender: Any) {
+        Auth.auth().signIn(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) { (result, error) in
+            guard let user = result?.user else {return}
+            self.updateUserAndProceed(user: user)
+        }
     }
     
     @IBAction func signUp(_ sender: Any) {
